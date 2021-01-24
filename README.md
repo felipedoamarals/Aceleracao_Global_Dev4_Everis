@@ -1,0 +1,2 @@
+Programa de Aceleração com arquitetos de soluções e especialistas seniores em Engenharia de Dados da Everis em parceria com Digital Innovation! <br>
+[Link](https://web.digitalinnovation.one/acceleration/aceleracao-global-dev-4-everis?tab=path)
