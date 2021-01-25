@@ -1,4 +1,4 @@
-# Live #3 - Monitoramento de clusters Hadoop de alto nível com HDFS e Yarn
+# Live #2 - Monitoramento de clusters Hadoop de alto nível com HDFS e Yarn
 
 **[HDFS](https://www.cetax.com.br/apache-hadoop-tudo-o-que-voce-precisa-saber/)** Hadoop Distributed File System (HDFS), é responsável por gerenciar o disco das máquinas que compõem o Cluster. HDFS também serve para leitura e gravação dos dados. <br>
 **[Yarn](https://pt.wikipedia.org/wiki/Hadoop)** é uma plataforma do ecossistema Hadoop para gerenciamento de recursos responsável pelo gerenciamento dos recursos computacionais em cluster, assim como pelo agendamento dos recursos. <br>
