@@ -244,4 +244,5 @@ hdfs dfs -cat /user/everis-bigdata/pokemon/1/* |wc -l
 ~~~
 
 ### Material
+[Máquina Virtual utilizada](https://hermes.digitalinnovation.one/files/acceleration/Everis_BigData-v3.ova) <br>
 [Slide da aula](https://drive.google.com/file/d/1ZN53soEHPYiRS1hCtEN3L3lYSnuCZH9-/view)
