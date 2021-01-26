@@ -1,7 +1,9 @@
 # Live #4 - Como realizar consultas de maneira simples no ambiente complexo de Big Data com HIVE e Impala
 
 **[Apache Hive](https://www.dezyre.com/article/impala-vs-hive-difference-between-sql-on-hadoop-components/180)** é uma infraestrutura de data warehouse construída sobre a plataforma Hadoop para realizar tarefas intensivas de dados, como consulta, análise, processamento e visualização. <br>
-**[Apache Impala](https://medium.com/@markuvinicius/deep-diving-into-hadoop-world-hive-e-impala-11b1dca716ba)** O Impala traz uma tecnologia de banco de dados paralela e escalável para o Hadoop, permitindo que os usuários emitam consultas SQL de baixa latência a dados armazenados no HDFS ou HBase sem necessidade de movimentar ou transformar os dados. <br>
+**[Apache Impala](https://medium.com/@markuvinicius/deep-diving-into-hadoop-world-hive-e-impala-11b1dca716ba)** traz uma tecnologia de banco de dados paralela e escalável para o Hadoop, permitindo que os usuários emitam consultas SQL de baixa latência a dados armazenados no HDFS ou HBase sem necessidade de movimentar ou transformar os dados. <br>
+
+Profº [**Vinicius Bueno**](https://www.linkedin.com/in/vinicius-m-bueno-br/) <br>
 
 ### 1 - Iniciando os serviços que serão utilizados
 ~~~shell

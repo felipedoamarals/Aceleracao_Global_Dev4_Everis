@@ -4,6 +4,8 @@
 **[Yarn](https://pt.wikipedia.org/wiki/Hadoop)** é uma plataforma do ecossistema Hadoop para gerenciamento de recursos responsável pelo gerenciamento dos recursos computacionais em cluster, assim como pelo agendamento dos recursos. <br>
 **[Sqoop](https://www.cetax.com.br/apache-hadoop-tudo-o-que-voce-precisa-saber/)** é um projeto do ecossistema Hadoop, cuja responsabilidade é importar e exportar dados do banco de dados relacionais. <br>
 
+Profº [**Rodrigo Garcia**](https://www.linkedin.com/in/rodsantosg/) <br>
+
 ### 1 - Alguns exemplos:
 ~~~shell
 # Exemplo 1
