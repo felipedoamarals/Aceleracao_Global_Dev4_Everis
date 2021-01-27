@@ -7,11 +7,8 @@
 Profº [**Valdir Sevaios**](https://www.linkedin.com/in/valdir-novo-sevaios-junior-8190a096/) <br>
 
 ### 1 - Live Demo
-### 1.1 - Beeline
-~~~shell
-~~~
 
-### 1.2 - HBase
+### 1.1 - HBase
 ~~~shell
 #Acessando
 $ hbase shell
@@ -73,7 +70,7 @@ create 'ttl_exemplo', {'NAME'=>'cf', 'TTL' => 20}
 put 'ttl_exemplo', 'linha123', 'cf:desc', 'TTL Exemplo'
 ~~~
 
-### 1.3 - Cassandra
+### 1.2 - Cassandra
 ~~~shell
 #Acessando
 cqlsh
