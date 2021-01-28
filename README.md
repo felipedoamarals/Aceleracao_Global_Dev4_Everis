@@ -6,3 +6,4 @@
 [**Live #5** - Explorando o poder do NoSQL com Apache Cassandra e Apache Hbase](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%235.md) <br>
 [**Live #6** - Intensivo de Python: O mínimo que você precisa saber - Python](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%236%20-%20Python.ipynb) <br>
 [**Live #6** - Intensivo de Python: O mínimo que você precisa saber - Pandas](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%236%20-%20Pandas.ipynb) <br>
+[**Live #6** - Intensivo de Python: O mínimo que você precisa saber - Criando Rest Service](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%236%20-%20Criando_Rest_Service.ipynb) <br>
