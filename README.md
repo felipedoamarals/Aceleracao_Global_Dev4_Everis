@@ -4,3 +4,5 @@
 [**Live #3** - Orquestrando ambientes de big data distribuídos com Zookeeper, Yarn e Sqoop](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%233.md) <br>
 [**Live #4** - Como realizar consultas de maneira simples no ambiente complexo de Big Data com HIVE e Impala](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%234.md) <br>
 [**Live #5** - Explorando o poder do NoSQL com Apache Cassandra e Apache Hbase](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%235.md) <br>
+[**Live #6** - Intensivo de Python: O mínimo que você precisa saber - Python](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%236%20-%20Python.ipynb) <br>
+[**Live #6** - Intensivo de Python: O mínimo que você precisa saber - Pandas](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%236%20-%20Pandas.ipynb) <br>
