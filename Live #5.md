@@ -26,7 +26,7 @@ $ sudo -u hdfs hadoop fsck / | egrep -v '^\.+$' | grep -v eplica
 $ sudo -u hdfs hdfs dfs -rm <caminho do arquivo>
 
 #Criando uma tabela
-create 'funcionario', 'pessoais', 'profssionais'
+create 'funcionario', 'pessoais', 'profissionais'
 
 #Inserindo dados na tabela
 put 'funcionario', '1', 'pessoais:nome', 'Maria'
@@ -45,7 +45,7 @@ put 'funcionario', '2', 'profssionais:empresa', 'Everis'
 disable 'funcionario'
 
 ##Alterando tabela
-alter 'funcionario', NAME='hobby', VERSIONS=>5
+alter 'funcionario', NAME=>'hobby', VERSIONS=>5
 
 ##Habilitando tabela
 enable 'funcionario'
@@ -120,54 +120,156 @@ Column Family=estatisticas
         Quantidade de moradores
         Quantidade de eleitores
         Ano de fundação
+
+#Criando Tabela
+create 'cidade', 'info', 'responsaveis', 'estatisticas'
+
+#Versionamento
+alter 'cidade', NAME='info', VERSIONS =>5
+alter 'cidade', NAME='responsaveis', VERSIONS =>5
+alter 'cidade', NAME='estatisticas', VERSIONS =>5
 ~~~
 2. Inserir 10 cidades na tabela criada de cidades.
 ~~~shell
+#Exemplo utilizado
+put 'cidade', '10', 'info:N_Cid', 'Alagoas'
+put 'cidade', '10', 'info:Dt_fund', '2000-10-10'
+put 'cidade', '10', 'responsaveis:N_Pref', 'Joao'
+put 'cidade', '10', 'responsaveis:Dt_Pos', '2000-10-10'
+put 'cidade', '10', 'responsaveis:N_Vice', 'Pedro'
+put 'cidade', '10', 'estatisticas:Dt_ultel', '2000-10-10'
+put 'cidade', '10', 'estatisticas:Qt_Mora', '993939'
+put 'cidade', '10', 'estatisticas:Qt_el', '949351'
+put 'cidade', '10', 'estatisticas:Ano_fund', '2000-10-10'
 ~~~
    
 3. Realizar uma contagem de linhas na tabela.
 ~~~shell
+count 'cidade'
+#Resultado:
+#hbase(main):127:0> count 'cidade'
+#10 row(s) in 0.0200 seconds
+#
+#=> 10
+
 ~~~
    
 4. Consultar só o código e nome da cidade.
 ~~~shell
+get 'cidade', '1', 'info:N_Cid'
+#Resultado
+#hbase(main):133:0> get 'cidade', '1', 'info:N_Cid'
+#COLUMN                         CELL                                                                                   
+# info:N_Cid                    timestamp=1611793163883, value=Florianopolis
 ~~~
    
 5. Escolha uma cidade, consulte os dados dessa cidade em específico antes do próximo passo.
 ~~~shell
+get 'cidade', '1'
+#COLUMN                         CELL                                                                                   
+# estatisticas:Ano_fund         timestamp=1611793471968, value=2000-10-10                                              
+# estatisticas:Dt_ultel         timestamp=1611793469699, value=2000-10-10                                              
+# estatisticas:Qt_Mora          timestamp=1611793469730, value=993939                                                  
+# estatisticas:Qt_el            timestamp=1611793469750, value=949351                                                  
+# info:Dt_fund                  timestamp=1611793170666, value=2000-10-10                                              
+# info:N_Cid                    timestamp=1611793163883, value=Florianopolis                                           
+# responsaveis:Dt_Pos           timestamp=1611793182596, value=2000-10-10                                              
+# responsaveis:N_Pref           timestamp=1611793176437, value=Joao                                                    
+# responsaveis:N_Vice           timestamp=1611793188547, value=Pedro                                                   
+#9 row(s) in 0.0070 seconds
 ~~~
    
 6. Altere para a cidade escolhida os dados de Prefeito, Vice Prefeito e nova data de Posse.
 ~~~shell
+put 'cidade', '1', 'responsaveis:N_Pref', 'Cezar'
+put 'cidade', '1', 'responsaveis:N_Vice', 'Augusto'
 ~~~
    
 7. Consulte os dados da cidade alterada.
 ~~~shell
+get 'cidade', '1'
+#COLUMN                         CELL                                                                                   
+# estatisticas:Ano_fund         timestamp=1611793471968, value=2000-10-10                                              
+# estatisticas:Dt_ultel         timestamp=1611793469699, value=2000-10-10                                              
+# estatisticas:Qt_Mora          timestamp=1611793469730, value=993939                                                  
+# estatisticas:Qt_el            timestamp=1611793469750, value=949351                                                  
+# info:Dt_fund                  timestamp=1611793170666, value=2000-10-10                                              
+# info:N_Cid                    timestamp=1611793163883, value=Florianopolis                                           
+# responsaveis:Dt_Pos           timestamp=1611793182596, value=2000-10-10                                              
+# responsaveis:N_Pref           timestamp=1611795251657, value=Cezar                                                   
+# responsaveis:N_Vice           timestamp=1611795236842, value=Augusto                                                 
+#9 row(s) in 0.0140 seconds
 ~~~
    
 8. Consulte todas as versões dos dados da cidade alterada.
 ~~~shell
+get 'cidade', '1', {COLUMNS=>['responsaveis'],VERSIONS=>5}
+#hbase(main):203:0> get 'cidade', '1', {COLUMNS=>['responsaveis'],VERSIONS=>5}
+#COLUMN                        CELL                                                                                
+# responsaveis:Dt_Pos          timestamp=1611793182596, value=2000-10-10
+# responsaveis:N_Pref           timestamp=1611795251657, value=Cezar                                                   
+# responsaveis:N_Vice           timestamp=1611795236842, value=Augusto                                           
+# responsaveis:N_Pref          timestamp=1611796161455, value=Davi                                                 
+# responsaveis:N_Vice          timestamp=1611795236842, value=Augusto                                              
+#5 row(s) in 0.0080 seconds
 ~~~
 
 9. Exclua as três cidades com menor quantidade de habitantes e quantidade de eleitores.
 ~~~shell
+
 ~~~
    
 10. Liste todas as cidades novamente.
 ~~~shell
+scan 'cidade'
 ~~~
     
 11. Adicione na ColumnFamily “estatísticas”, duas novas colunas de “quantidade de partidos políticos” e “Valor em Reais à partidos” para as 2 cidades mais populosas cadastradas.
 ~~~shell
+put 'cidade', '1', 'responsaveis:Qt_Part', '39'
+put 'cidade', '1', 'responsaveis:Valor_Part', '34556'
 ~~~
     
 12. Liste novamente todas as cidades.
 ~~~shell
+scan 'cidade'
 ~~~
 
 ### 3 - Operações massivas
+3.1 Exemplo
+~~~shell
+#1. Confirmar que o arquivo employees.csv esteja em /home/everis/employee.csv
+#2. Criar a tabela employees no Hbase com a column Familty: employee_data
+create 'employees', 'employee_data'
+#3. Criar uma pasta no HDFS pelo shell do Linux
+hadoop fs -mkdir /test
+#4. Copia os arquivos exportados para o HDFS pelo shell do Linux
+hadoop fs -copyFromLocal /home/everis/employees.csv /test/employees.csv
+#5. Executar a importação no shell do Linux
+hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=';' -Dimporttsv.columns=HBASE_ROW_KEY,employee_data:birth_date,employee_data:first_name,employee_data:last_name,employee_data:gender,employee_data:hire_date employees/test/employees.csv
+~~~
+
+3.2 Atividades
 
 ### 4 - Integrações NoSQL com ambiente Hadoop
+~~~shell
+#1. Vamos criar um novo schema no Hive.
+CREATE DATABASE tabelas_hbases;
+
+#2. Criar a tabela employee no Hive.
+CREATE EXTERNAL TABLE tabelas_hbases.employees (
+    emp_no INT,
+    birth_date string,
+    first_name string,
+    last_name string,
+    gender string,
+    hire_date string)
+    STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+    WITH SERDEPROPERTIES("hbase.columns.mapping"=":key, employee_data:birth_date, employee_data:first_name, employee_data:last_name,employee_data:gender,employee_data:hire_date")
+    TBLPROPERTIES("hbase.table.name"="employees", "hbase.mapred.output.outputtable"="employees");
+~~~
+
+4.1 Atvidades
 
 ### Comandos Gerais
 ~~~shell
