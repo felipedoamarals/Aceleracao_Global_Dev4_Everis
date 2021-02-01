@@ -135,7 +135,7 @@ sudo service hadoop-hdfs-secondarynamenode stop
 sudo service zookeeper-server stop
 
 # Corrigir problema com o caminho de gravação de logs
-sudo sed -i 's|hdfs://bigdata-srv:8020/|g' /etc/hadoop/conf/yarn-site.xml
+sudo sed -i 's|hdfs://|hdfs://bigdata-srv:8020/|g' /etc/hadoop/conf/yarn-site.xml #Corrigido por @jcr0ch4 
 
 # Libera firewall da vm
 sudo systemctl disable firewalld && sudo systemctl stop firewalld
