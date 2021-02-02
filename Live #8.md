@@ -183,4 +183,4 @@ spark.sql("SELECT SUM(eq_site_limit) FROM av GROUP BY construction").show(10, fa
 ~~~
 ### Material
 [Máquina Virtual utilizada](https://hermes.digitalinnovation.one/files/acceleration/Everis_BigData-v3.ova) <br>
-[Slide da aula*]() *slide não disponível até o momento
+[Slide da aula](https://drive.google.com/file/d/1sLEOp1T2nmH74yT0CLHDNzLcHLtVqIm3/view)
