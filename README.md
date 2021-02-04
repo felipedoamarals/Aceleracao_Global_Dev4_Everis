@@ -11,3 +11,4 @@
 [**Live #8** - Processando grandes conjuntos de dados de forma paralela e distribuída com Spark](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%238.md) <br>
 [**Live #9** - Criando pipelines de dados eficientes - Parte 1](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%239.md) <br>
 [**Live #10** - Criando pipelines de dados eficientes - Parte 2](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%239.md) <br>
+[**Live #11** - Orquestrando Big Data em Ambiente de Nuvem](https://github.com/felipedoamarals/Aceleracao_Global_Dev4_Everis/blob/master/Live%20%2311.md) <br>
