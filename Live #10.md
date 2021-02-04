@@ -43,6 +43,7 @@ df1.write.format("parquet").save("/FileStore/tables/RAW_ZONE_PARQUET/")
 #Salvando dataframe, dividindo o arquivo e subscrevendo
 df1.repartition(2).write.format("parquet").mode("overwrite").save("/FileStore/tables/RAW_ZONE_PARQUET/")
 
+#Visualiza linha de dataframe como objeto
 df1.take(1)
 
 #cmd4-------
