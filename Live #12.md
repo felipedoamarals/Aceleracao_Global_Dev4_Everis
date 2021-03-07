@@ -49,18 +49,18 @@ mvn archetype:generate -DarchetypeGroupId=net.alchim31.maven -DarchetypeArtifact
 ~~~
 
 5 - Arquivo pom.xml
-~~~xml
+~~~xhtml
 <!--Editar os campos recomendados-->
-<properties>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
-    <encoding>UTF-8</encoding>
-    <scala.version>2.11.12</scala.version> <!---Versão 12 para compatibilidade com Metals-->
-    <scala.compat.version>2.11</scala.compat.version>
-  </properties>
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+        <scala.version>2.11.12</scala.version> <!---Versão 12 para compatibilidade com Metals-->
+        <scala.compat.version>2.11</scala.compat.version>
+    </properties>
 
 <!--Remover a linha Make:transitive em build-->
-    <arg>-make:transitive</arg>
+       <arg>-make:transitive</arg>
 ~~~
 
 6 - Remover pasta SAMPLE em src/test/scala/
