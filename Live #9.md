@@ -1,4 +1,4 @@
-# Live #9 - Criando pipelines de dados eficientes - Parte 1 - Sparke Streaming
+# Live #9 - Criando pipelines de dados eficientes - Parte 1 - Spark Streaming
 
 **[Apache Spark](https://pt.wikipedia.org/wiki/Apache_Spark)** é um framework de código fonte aberto para computação distribuída. Ele provê uma interface para programação de clusters com paralelismo e tolerância a falhas. <br>
 
